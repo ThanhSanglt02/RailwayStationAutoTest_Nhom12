@@ -1,0 +1,4 @@
+1. Testcase giải quyết được stress test --> tìm hiểu tools jmeter giải quyết
+
+2. data-driven script: là cùng 1 step nhưng khác data
+	VD: login thì có 1 step nhưng mỗi lần chạy với các data khác nhau
