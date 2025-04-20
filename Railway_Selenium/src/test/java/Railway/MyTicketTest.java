@@ -10,8 +10,8 @@ import org.testng.annotations.Test;
 import static Common.Common.HandleAlertSwitchTo.*;
 
 public class MyTicketTest extends BaseTest{
-    @Test
-    public void TC16() {
+    @Test (description =  "User can cancel a ticket")
+    public void cancelTicketTest() {
         String departDate = "4/28/2025";
         String departFrom = "Quảng Ngãi";
         String arriveAt = "Nha Trang";

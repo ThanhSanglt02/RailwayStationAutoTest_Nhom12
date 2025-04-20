@@ -19,7 +19,6 @@ public class BookTicketPageTest extends BaseTest {
     @Test
     public void TC04() {
         homePage.gotoBookTicketPage(); // vì chưa login nên khi từ HomePage muốn vào BookTicket phải thông qua login
-        LoginPage loginPage = new LoginPage();
         boolean actual = loginPage.isLoginPageDisplay();
         Assert.assertTrue(actual, "Login Page is not display when click tab BookTicket");
     }
