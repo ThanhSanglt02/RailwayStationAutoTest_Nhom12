@@ -3,6 +3,8 @@ package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 import static Common.Common.HandleJS.clickJS;
 import static Common.Common.Utilities.*;
 
@@ -43,6 +45,28 @@ public class BookTicketPage extends HomePage{
     public void selectTicketAmount(String ticketAmount) {
         selectOptionByVisibleText(ticketAmountSelect, ticketAmount);
     }
+    // lấy tất cả option được selected của depart date
+    public List<String> getAllSelectedDepartDate() {
+        return getAllSelectedOptions(departDateSelect);
+    }
+    // lấy tất cả option được selected của depart from
+    public List<String> getAllSelectedDepartFrom() {
+        return getAllSelectedOptions(departFromSelect);
+    }
+    // lấy tất cả option được selected của arrive at
+    public List<String> getAllSelectedArriveAt() {
+        return getAllSelectedOptions(arriveAtSelect);
+    }
+    // lấy tất cả option được selected của seatType
+    public List<String> getAllSelectedSeatType() {
+        return getAllSelectedOptions(seatTypeSelect);
+    }
+    // lấy tất cả option được selected của ticketAmount
+    public List<String> getAllSelectedTicketAmount() {
+        return getAllSelectedOptions(ticketAmountSelect);
+    }
+
+
     public BookTicketPage clickBtnBookTicket() {
         clickJS(btnBookTicket);
         return new BookTicketPage();

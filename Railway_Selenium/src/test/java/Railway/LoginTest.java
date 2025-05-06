@@ -30,14 +30,14 @@ public class LoginTest extends BaseTest{
         Assert.assertEquals(actual, "There was a problem with your login and/or errors exist in your form.");
     }
 
-    @Test (description = "User cannot log into Railway with invalid password ")
+    @Test (description = "TC03: User cannot log into Railway with invalid password ")
     public void login_withInvalidPassword_shoudDisplayErrorMsg() {
         loginPage.login(Constant.USERNAME,"1234568111");
         String actual = loginPage.getErrorMsgInvalid();
         Assert.assertEquals(actual, "There was a problem with your login and/or errors exist in your form.");
     }
 
-    @Test (description = "System shows message when user enters wrong password several times (3 times)")
+    @Test (description = "TC05: System shows message when user enters wrong password several times (3 times)")
     public void login_withThreeWrongPasswords_shouldShowErrorMessage() {
         for (int i = 0; i<4 ; i++) {
             loginPage.login(Constant.USERNAME,"1234568111");

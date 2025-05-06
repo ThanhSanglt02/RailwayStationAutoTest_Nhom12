@@ -7,6 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static Common.Common.HandleJS.scrollIntoViewJS;
 
 public class Utilities<IJavaScriptExecutor> {
@@ -35,9 +38,11 @@ public class Utilities<IJavaScriptExecutor> {
         findDropDown(locator).deselectByVisibleText(text);
     }
     // get text of option
-    public static void getTextofSelectOption(By locator) {
-        findDropDown(locator).getOptions();
+    public static List<String> getAllSelectedOptions(By locator) {
+        List< WebElement> allSelectedOptions = findDropDown(locator).getAllSelectedOptions();
+        return allSelectedOptions.stream().map(WebElement::getText).collect(Collectors.toList());
     }
+
 
     public static String getPseudoBeforeJS(By locator) {
         WebElement webElement = driver.findElement(locator);

@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TimeTableTest extends BaseTest {
-     @Test
+     @Test (description = "User can open Book ticket page by clicking on Book ticket link in Train timetable page")
     public void TC15() {
          String departStation = "Huế";
          String arriveStation = "Sài Gòn";

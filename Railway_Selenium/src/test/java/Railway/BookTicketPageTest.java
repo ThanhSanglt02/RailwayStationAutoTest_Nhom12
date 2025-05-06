@@ -16,14 +16,14 @@ public class BookTicketPageTest extends BaseTest {
 //
 //    }
 
-    @Test
-    public void TC04() {
+    @Test (description = "TC04: Login page displays when un-logged User clicks on Book ticket tab")
+    public void clickBookTicket_withUnLogged_loginPagedisplayed() {
         homePage.gotoBookTicketPage(); // vì chưa login nên khi từ HomePage muốn vào BookTicket phải thông qua login
         boolean actual = loginPage.isLoginPageDisplay();
         Assert.assertTrue(actual, "Login Page is not display when click tab BookTicket");
     }
 
-    @Test
+    @Test (description = "TC14: User can book 1 ticket at a time")
     public void TC14() {
         String departDate = "4/28/2025";
         String departFrom = "Huế";

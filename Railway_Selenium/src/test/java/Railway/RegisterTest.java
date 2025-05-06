@@ -20,7 +20,7 @@ public class RegisterTest extends BaseTest{
         Assert.assertTrue(actualResult, "The message confirm register suscess is not displayed");
     }
 
-    @Test
+    @Test (description = "User can't create account with Confirm password is not the same with Password")
     public void TC10() {
         registerPage.performRegister(Constant.EMAIL_REGISTER,Constant.PASSWORD,"12039231", Constant.PID);
         String actual = registerPage.getTextErrorMessageRegister();
@@ -28,7 +28,7 @@ public class RegisterTest extends BaseTest{
         Assert.assertEquals(actual,expect,
                 "\n Actual and Expected are not match\n");
     }
-    @Test
+    @Test (description = "User can't create account while password and PID fields are empty")
     public void TC11() {
         registerPage.performRegister(Constant.EMAIL_REGISTER,"",Constant.CONFIRMPASSWORD, "");
         String actualTitle = registerPage.getTextErrorMessageRegister();
